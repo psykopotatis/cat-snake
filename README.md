@@ -1,5 +1,6 @@
 # cat-snake
 Snake game with Phaser.js
+
 https://phaser.io/
 
 ```
@@ -10,5 +11,6 @@ surge html cat-snake.surge.sh
 python3 -m http.server
 ```
 
-Play! :D
+Play!
+
 https://cat-snake.surge.sh/
