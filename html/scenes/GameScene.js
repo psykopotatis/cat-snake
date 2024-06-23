@@ -1,4 +1,5 @@
 import { Snake } from './Snake.js';
+import { Food } from './Food.js';
 
 const TILE_SIZE = 32;
 const TILES_X = 40;
@@ -84,17 +85,6 @@ class GameScene extends Phaser.Scene {
     }
 }
 
-class Food extends Phaser.GameObjects.Image {
-    constructor(scene, x, y) {
-        super(scene, x * TILE_SIZE, y * TILE_SIZE, 'food');
-        this.setOrigin(0);
-        this.total = 0;
-        scene.add.existing(this);
-    }
 
-    eat() {
-        this.total++;
-    }
-}
 
 export { GameScene };
