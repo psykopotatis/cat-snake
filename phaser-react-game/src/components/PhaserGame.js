@@ -15,7 +15,8 @@ const PhaserGame = () => {
             height: window.innerHeight - MARGIN,
             backgroundColor: '#fff',
             parent: gameRef.current,
-            scene: [StartScene, GameScene],
+            // scene: [StartScene, GameScene],
+            scene: [GameScene],
         };
 
         const game = new Phaser.Game(config);

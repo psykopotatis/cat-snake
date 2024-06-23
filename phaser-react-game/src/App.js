@@ -11,14 +11,24 @@ function App() {
         setStartGame(true);
     };
 
-  return (
-      <div className="App">
-        <header className="App-header">
-            {!startGame && <Button type="primary" onClick={handleStartGame}>Start</Button>}
-            {startGame && <PhaserGame />}
-        </header>
-      </div>
-  );
+    function renderStartScreen() {
+        if (!startGame) {
+            return (
+                <div className="start-screen">
+                    <h1 className="title">Cat Snake</h1>
+                    <img src="images/start_image.png" alt="Start" className="start-image"/>
+                    <Button type="primary" size="large" onClick={handleStartGame} className="start-button">Start game</Button>
+                </div>
+            );
+        }
+    }
+
+    return (
+        <div className="App">
+            {renderStartScreen()}
+            {startGame && <PhaserGame/>}
+        </div>
+    );
 }
 
 export default App;
