@@ -27,6 +27,9 @@
     var food;
     var cursors;
 
+    var score = 0;
+    var scoreText;
+
     //  Direction consts
     var UP = 0;
     var DOWN = 1;
@@ -180,6 +183,10 @@
 
                     food.eat();
 
+                    score += 10;  // Increase score
+                    scoreText.setText('Score: ' + score);  // Update score text
+
+
                     if (this.speed > 20 && food.total % 5 === 0) {
                         this.speed -= 5;
                     }
@@ -212,6 +219,10 @@
         snake = new Snake(this, 8, 8);
 
         cursors = this.input.keyboard.createCursorKeys();
+
+        // Create the score text
+        scoreText = this.add.text(10, 10, 'Score: 0', { fontSize: '32px', fill: '#000' });
+
     }
 
     function update(time, delta) {
