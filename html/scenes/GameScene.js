@@ -19,9 +19,13 @@ class GameScene extends Phaser.Scene {
         this.load.image('wall', 'grass_32.png');
         this.load.image('food', 'proplan_32.png');
         this.load.image('body', 'andiamo_32.png');
+        this.load.image('background', 'background.png'); // Ensure the path is correct
     }
 
     create() {
+        // Add the background image and position it in the top-left corner
+        this.add.image(0, 0, 'background').setOrigin(0, 0).setScale(1);
+        
         this.createWalls();
         this.food = new Food(this, 3, 4);
         this.snake = new Snake(this, 8, 8);
