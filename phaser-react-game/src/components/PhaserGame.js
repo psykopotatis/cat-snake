@@ -6,12 +6,13 @@ import GameScene from "./GameScene";
 
 const PhaserGame = () => {
     const gameRef = useRef(null);
+    const MARGIN = 10;
 
     useEffect(() => {
         const config = {
             type: Phaser.AUTO,
-            width: 800,
-            height: 600,
+            width: window.innerWidth - MARGIN,
+            height: window.innerHeight - MARGIN,
             backgroundColor: '#fff',
             parent: gameRef.current,
             scene: [StartScene, GameScene],
